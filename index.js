@@ -13,6 +13,7 @@ app.use('/', proxy({
     changeOrigin: true,
 	onProxyReq: (proxyReq, req, res) => {
 		proxyReq.setHeader('origin', 'https://widget.anghami.com');
+		proxyReq.setHeader('referer', 'https://widget.anghami.com');
 	},
 	onProxyRes: (proxyRes) => {
 		proxyRes.headers['Access-Control-Allow-Origin'] = '*';
