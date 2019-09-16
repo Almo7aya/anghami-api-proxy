@@ -8,7 +8,6 @@ const anghamiAPIsEndpoint = 'https://api.anghami.com';
 
 app.use(cors({
 	credentials: true,
-	origin: 'localhost:5500, localhost:*',
 }));
 
 app.use('/', proxy({
@@ -17,11 +16,10 @@ app.use('/', proxy({
 	onProxyReq: (proxyReq, req, res) => {
 		proxyReq.setHeader('origin', 'https://widget.anghami.com');
 		proxyReq.setHeader('referer', 'https://widget.anghami.com');
-		// proxyReq.setHeader('Access-Control-Allow-Origin', '*');
 		proxyReq.setHeader('cookie', 'sss=ns55495274_fc2daa7ffa0d46af8574d4b1834f5bc4'); // fake account
 	},
 	onProxyRes: (proxyRes) => {
-		// proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+		proxyRes.headers['Access-Control-Allow-Origin'] = 'localhost:5500, localhost:*';
 	}
 }));
 
