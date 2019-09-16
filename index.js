@@ -16,10 +16,10 @@ app.use('/', proxy({
 	onProxyReq: (proxyReq, req, res) => {
 		proxyReq.setHeader('origin', 'https://widget.anghami.com');
 		proxyReq.setHeader('referer', 'https://widget.anghami.com');
-		proxyReq.setHeader('cookie', 'sss=ns55495274_fc2daa7ffa0d46af8574d4b1834f5bc4'); // fake account
+		proxyReq.setHeader('cookie', 'sss=ns55495274_fc2daa7ffa0d46af8574d4b1834f5bc4;'); // fake account
 	},
-	onProxyRes: (proxyRes) => {
-		proxyRes.headers['Access-Control-Allow-Origin'] = 'localhost:5500, localhost:*';
+	onProxyRes: (proxyRes, req) => {
+		proxyRes.headers['Access-Control-Allow-Origin'] = req.headers.host;
 	}
 }));
 
