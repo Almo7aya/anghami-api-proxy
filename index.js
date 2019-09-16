@@ -8,7 +8,7 @@ const anghamiAPIsEndpoint = 'https://api.anghami.com';
 
 app.use(cors({
 	credentials: true,
-	origin: '*',
+	origin: 'localhost:5500, localhost:*',
 }));
 
 app.use('/', proxy({
