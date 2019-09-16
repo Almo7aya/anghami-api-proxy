@@ -6,7 +6,10 @@ const port = process.env.PORT || 5300;
 
 const anghamiAPIsEndpoint = 'https://api.anghami.com';
 
-app.use(cors());
+app.use(cors({
+	credentials: true,
+	origin: '*',
+}));
 
 app.use('/', proxy({
 	target: anghamiAPIsEndpoint,
