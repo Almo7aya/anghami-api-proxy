@@ -21,6 +21,7 @@ app.use('/', proxy({
 	},
 	onProxyRes: (proxyRes, req) => {
 		proxyRes.headers['Access-Control-Allow-Origin'] = req.originalHost;
+		console.log(req)
 	}
 }));
 
