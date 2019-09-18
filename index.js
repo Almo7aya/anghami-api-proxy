@@ -16,7 +16,7 @@ app.use('/', proxy({
 	onProxyReq: (proxyReq, req, res) => {
 		proxyReq.setHeader('origin', 'https://widget.anghami.com');
 		proxyReq.setHeader('referer', 'https://widget.anghami.com');
-		proxyReq.setHeader('cookie', 'sss=ns55495274_fc2daa7ffa0d46af8574d4b1834f5bc4;'); // fake account
+		proxyReq.setHeader('cookie', 'sss=ns56202810_4a550b27a015a5d11a0ea8c86dac5313;'); // fake account
 	},
 	onProxyRes: (proxyRes, req) => {
 		proxyRes.headers['Access-Control-Allow-Origin'] = req.headers.origin;
